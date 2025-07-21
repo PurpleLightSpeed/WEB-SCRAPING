@@ -24,3 +24,23 @@ print(type(elems[0]))
 print(str(elems[0])) # The Tag object as a string
 print(elems[0].get_text()) # The inner text of the element
 print(elems[0].attrs)
+
+p_elems = example_soup.select("p")
+print(str(p_elems[0]))
+print(p_elems[0].get_text())
+print(str(p_elems[1]))
+print(p_elems[1].get_text())
+print(str(p_elems[2]))
+print(p_elems[2].get_text())
+
+soup = bs4.BeautifulSoup(open('example3.html'), 'html.parser')
+span_elem = soup.select('span')[0]
+print(str(span_elem))
+print(span_elem.get('id'))
+print(span_elem.get('some_nonexistent_addr') == None)
+print(span_elem.attrs)
+
+
+
+
+
