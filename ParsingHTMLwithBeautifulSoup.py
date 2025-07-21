@@ -1,0 +1,26 @@
+import requests, bs4
+
+# Correct URL
+res = requests.get("https://automatetheboringstuff.com/example3.html")
+res.raise_for_status()
+example_soup = bs4.BeautifulSoup(res.text, 'html.parser')
+print(type(example_soup))
+
+# Save the HTML to a file
+with open("example3.html", "w", encoding="utf-8") as f:
+    f.write(res.text)
+
+# Now open and parse the saved file
+with open("example3.html", encoding="utf-8") as example_file:
+    example_soup = bs4.BeautifulSoup(example_file, 'html.parser')
+print(type(example_soup))
+
+example_file = open("example3.html", encoding="utf-8")
+example_soup = bs4.BeautifulSoup(example_file.read(), 'html.parser')
+elems = example_soup.select("#author")
+print(type(elems)) # elems is a list of Tag objects.
+print(len(elems))
+print(type(elems[0]))
+print(str(elems[0])) # The Tag object as a string
+print(elems[0].get_text()) # The inner text of the element
+print(elems[0].attrs)
