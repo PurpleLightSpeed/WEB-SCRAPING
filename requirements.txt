@@ -1,0 +1,6 @@
+selenium #Launches and controls a web browser, such as by filling in forms and simulating mouse clicks
+requests # Downloads files and web pages from the internet
+beautifulsoup4 # Parses HTML, the format that web pages are written in, to extract the information you want
+webbrowser # Comes with Python and opens a browser to a specific page
+playwright # Launches and controls a web browser; newer than Selenium and has some additional features
+pyperclip # Allows you to copy and paste text to and from the clipboard
